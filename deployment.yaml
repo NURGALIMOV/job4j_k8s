@@ -23,5 +23,5 @@ spec:
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
-                name: calculator
-                key: database_url
+                  name: calculator
+                  key: database_url
