@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: localhost
+    - host: 82.202.142.45
       http:
         paths:
           - path: /
@@ -17,3 +17,18 @@ spec:
                 name: calculator-service
                 port:
                   number: 8080
+metadata:
+  name: skooner
+  namespace: kube-system
+spec:
+  rules:
+    - host: 82.202.142.45
+      http:
+        paths:
+          - path: /
+            backend:
+              service:
+                name: skooner
+                port:
+                  number: 80
+            pathType: ImplementationSpecific
